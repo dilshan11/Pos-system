@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$PATH_TO_FIX$/javafx-swt.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.base.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.controls.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.fxml.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.graphics.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.media.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.swing.jar!/" />
+          <root url="jar://$PATH_TO_FIX$/javafx.web.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.base" />
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.controls" />
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.fxml" />
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.graphics" />
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.media" />
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.swing" />
+          <root url="jar://$PATH_TO_FIX$/src.zip!/javafx.web" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/spring/libs/spring-aop-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-aspects-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-beans-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-indexer-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-support-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-core-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-expression-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-instrument-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jcl-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jdbc-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jms-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-messaging-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-orm-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-oxm-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-test-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-tx-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-web-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-webflux-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-webmvc-5.1.1.RELEASE.jar!/" />
+          <root url="jar://F:/spring/libs/spring-websocket-5.1.1.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://F:/spring/libs/spring-aop-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-aspects-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-beans-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-indexer-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-support-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-core-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-expression-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-instrument-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jcl-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jdbc-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jms-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-messaging-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-orm-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-oxm-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-test-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-tx-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-web-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-webflux-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-webmvc-5.1.1.RELEASE-javadoc.jar!/" />
+          <root url="jar://F:/spring/libs/spring-websocket-5.1.1.RELEASE-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://F:/spring/libs/spring-aop-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-aspects-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-beans-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-indexer-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-context-support-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-core-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-expression-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-instrument-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jcl-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jdbc-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-jms-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-messaging-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-orm-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-oxm-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-test-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-tx-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-web-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-webflux-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-webmvc-5.1.1.RELEASE-sources.jar!/" />
+          <root url="jar://F:/spring/libs/spring-websocket-5.1.1.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
