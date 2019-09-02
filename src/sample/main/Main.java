@@ -13,33 +13,23 @@ import sample.view.Controller;
 
 import java.lang.annotation.Annotation;
 
-public class Main extends Application {
+public class
+Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getResource("../view/sample.fxml"));
-//        primaryStage.setTitle("Hello World");
-//        primaryStage.setScene(new Scene(root, 400, 400));
-//        primaryStage.show();
-
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("path/to/fxml"));
-////        loader.setControllerFactory(ctx::getBean);
-////        Parent root = loader.load();
-////        Controller controller = loader.getController();
         AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
         ctx.refresh();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/sample.fxml"));
         loader.setControllerFactory(ctx::getBean);
+
         Parent root = loader.load();
         Controller controller = loader.getController();
-
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 925, 400));
         primaryStage.show();
-
     }
-
 
     public static void main(String[] args) {
         launch(args);

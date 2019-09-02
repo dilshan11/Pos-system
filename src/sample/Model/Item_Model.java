@@ -7,6 +7,7 @@ import sample.Controller.ItemController;
 
 @Component
 public class Item_Model {
+    int itemid;
     String item;
     int quality;
     float price;
@@ -14,14 +15,19 @@ public class Item_Model {
     @Autowired
     ItemController itemController;
 
-    public void doit(){
-        System.out.println(itemController);
-    }
+
     public Item_Model() {
 
     }
 
     public Item_Model(String item, int quality, float price) {
+        this.item = item;
+        this.quality = quality;
+        this.price = price;
+    }
+
+    public Item_Model(int itemid, String item, int quality, float price) {
+        this.itemid = itemid;
         this.item = item;
         this.quality = quality;
         this.price = price;
@@ -49,6 +55,14 @@ public class Item_Model {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public int getItemid() {
+        return itemid;
+    }
+
+    public void setItemid(int itemid) {
+        this.itemid = itemid;
     }
 
     @Override
