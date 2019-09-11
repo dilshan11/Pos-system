@@ -1,36 +1,36 @@
 package sample.Model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import sample.Controller.ItemController;
+import javax.persistence.*;
 
-@Component
-public class Item_Model {
+@Entity
+@Table(name = "item")
+public class Item_M {
+    @Id
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @Column(name = "itemid")
     int itemid;
+    @Column(name = "item_name")
     String item;
+    @Column(name = "quantity")
     int quality;
+    @Column(name = "price")
     float price;
 
-    @Autowired
-    ItemController itemController;
-
-
-    public Item_Model() {
-
+    public Item_M() {
     }
 
-    public Item_Model(String item, int quality, float price) {
+    public Item_M(String item, int quality, float price) {
         this.item = item;
         this.quality = quality;
         this.price = price;
     }
 
-    public Item_Model(int itemid, String item, int quality, float price) {
+    public int getItemid() {
+        return itemid;
+    }
+
+    public void setItemid(int itemid) {
         this.itemid = itemid;
-        this.item = item;
-        this.quality = quality;
-        this.price = price;
     }
 
     public String getItem() {
@@ -57,18 +57,11 @@ public class Item_Model {
         this.price = price;
     }
 
-    public int getItemid() {
-        return itemid;
-    }
-
-    public void setItemid(int itemid) {
-        this.itemid = itemid;
-    }
-
     @Override
     public String toString() {
-        return "Item_Model{" +
-                "item='" + item + '\'' +
+        return "Item_M{" +
+                "itemid=" + itemid +
+                ", item='" + item + '\'' +
                 ", quality=" + quality +
                 ", price=" + price +
                 '}';

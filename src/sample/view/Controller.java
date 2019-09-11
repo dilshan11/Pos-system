@@ -3,56 +3,162 @@ package sample.view;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.Property;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import sample.Controller.ItemController;
-import sample.Model.Item_Model;
+import sample.Model.Item_M;
 import sample.Model.Item_fortable;
 
-import java.sql.SQLException;
+import java.io.IOException;
 
 @Component
 public class Controller {
     @Autowired
-    private ItemController itemController;
-    @FXML private TextField item;
-    @FXML private TextField quantity;
-    @FXML private TextField price;
-    @Autowired
-    Item_Model item_model;
+    ItemController itemController;
+    @FXML  TextField item;
+    @FXML  TextField quantity;
+    @FXML  TextField price;
+    @FXML
+    AnchorPane anchorPane;
+    Scene scene;
 
-    @FXML private TableView<Item_fortable> tableView;
-    @FXML private TableColumn<Item_fortable,Integer> tableitemid;
-    @FXML private TableColumn<Item_fortable,String> tableitem_name;
-    @FXML private TableColumn<Item_fortable,Integer> tablequantity;
-    @FXML private TableColumn<Item_fortable,Integer> tableprice;
+    @FXML  TableView<Item_fortable> tableView;
+    @FXML  TableColumn<Item_fortable,Integer> tableitemid;
+    @FXML  TableColumn<Item_fortable,String> tableitem_name;
+    @FXML  TableColumn<Item_fortable,Integer> tablequantity;
+    @FXML  TableColumn<Item_fortable,Float> tableprice;
 
-    public void get_Item(ActionEvent event){
-        item_model.setItem(item.getText());
-        item_model.setQuality(Integer.parseInt(quantity.getText()));
-        item_model.setPrice(Integer.parseInt(price.getText()));
+    AnnotationConfigApplicationContext annotationConfigApplicationContext;
+    Stage stage;
+
+    public void backto_main(){
         try {
-            itemController.save_Item(item_model);
-        } catch (SQLException e) {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+            loader.setControllerFactory(annotationConfigApplicationContext::getBean);
+            Parent root = loader.load();
+            Scene scene=new Scene(root, 925, 400);
+            System.out.println(stage);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void scenechnageto_item(){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("frist.fxml"));
+            loader.setControllerFactory(annotationConfigApplicationContext::getBean);
+            Parent root = loader.load();
+            Scene scene=new Scene(root, 925, 400);
+            System.out.println(stage);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void scenechnageto_order(){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("second.fxml"));
+            loader.setControllerFactory(annotationConfigApplicationContext::getBean);
+            Parent root = loader.load();
+            Scene scene=new Scene(root, 925, 400);
+            System.out.println(stage);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
     public void getall_item(){
-        try {
+        System.out.println(itemController);
             ObservableList<Item_fortable> item_modelObservableList =itemController.getallitem();
             tableitemid.setCellValueFactory(new PropertyValueFactory<Item_fortable,Integer>("itemid"));
             tableitem_name.setCellValueFactory(new PropertyValueFactory<Item_fortable,String>("item"));
             tablequantity.setCellValueFactory(new PropertyValueFactory<Item_fortable,Integer>("quality"));
-            tableprice.setCellValueFactory(new PropertyValueFactory<Item_fortable,Integer>("price"));
+            tableprice.setCellValueFactory(new PropertyValueFactory<Item_fortable,Float>("price"));
             tableView.setItems(item_modelObservableList);
-        } catch (SQLException e) {
-            e.printStackTrace();
+    }
+        public void save_item(){
+            Item_M item_m=new Item_M(item.getText(),Integer.parseInt(quantity.getText()),Float.parseFloat(price.getText()));
+
+            int a=itemController.save_item(item_m);
+            if(a==1){
+                item.setText("");
+                quantity.setText("");
+                price.setText("");
+            }
+
         }
+    Item_M item_m;
+        public void search_item(){
+             item_m=itemController.serach_item(item.getText());
+            item.setText(item_m.getItem());
+            quantity.setText(Integer.toString(item_m.getQuality()));
+            price.setText(Float.toString(item_m.getPrice()));
+        }
+        public void update_item(){
+            Item_M item_m=new Item_M(item.getText(),Integer.parseInt(quantity.getText()),Float.parseFloat(price.getText()));
+            item_m.setItemid(this.item_m.getItemid());
+            itemController.update_item(item_m);
+            item.setText("");
+            quantity.setText("");
+            price.setText("");
+        }
+        public void delete_item(){
+            item_m=itemController.serach_item(item.getText());
+            item.setText(item_m.getItem());
+            itemController.delete_item(item_m);
+            item.setText("");
+            quantity.setText("");
+            price.setText("");
+        }
+
+
+
+
+
+
+
+
+
+    public AnnotationConfigApplicationContext getAnnotationConfigApplicationContext() {
+        return annotationConfigApplicationContext;
     }
 
+    public void setAnnotationConfigApplicationContext(AnnotationConfigApplicationContext annotationConfigApplicationContext) {
+        this.annotationConfigApplicationContext = annotationConfigApplicationContext;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 }
