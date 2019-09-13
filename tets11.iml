@@ -6,6 +6,7 @@
         <datasource-map />
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/sample/main/hibernate.cgx.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/sample/resources/hibernate.cgx.xml" />
       </configuration>
     </facet>
   </component>

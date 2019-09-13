@@ -25,10 +25,10 @@ Main extends Application {
         Parent root = loader.load();
 //        Controller controller = loader.getController();
         primaryStage.setTitle("Hello World");
-        Scene scene=new Scene(root, 925, 450);
+        Scene scene=new Scene(root, 925, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
-
+        System.out.println("this is it");
         Controller controller=ctx.getBean(Controller.class);
         controller.setAnnotationConfigApplicationContext(ctx);
         controller.setScene(scene);
@@ -37,6 +37,7 @@ Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
 
 
     }

@@ -1,6 +1,8 @@
 package sample.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "item")
@@ -16,6 +18,9 @@ public class Item_M {
     @Column(name = "price")
     float price;
 
+    @OneToMany(mappedBy = "item_m")
+    List<Order_item> order_itemList=new ArrayList<>();
+
     public Item_M() {
     }
 
@@ -24,6 +29,7 @@ public class Item_M {
         this.quality = quality;
         this.price = price;
     }
+
 
     public int getItemid() {
         return itemid;

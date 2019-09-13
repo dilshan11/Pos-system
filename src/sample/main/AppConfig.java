@@ -1,13 +1,12 @@
 package sample.main;
 
-import javafx.scene.Scene;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import sample.Model.Item_M;
-
-import java.io.File;
+import sample.Model.Ord;
+import sample.Model.Order_item;
 
 
 @org.springframework.context.annotation.Configuration
@@ -18,6 +17,8 @@ public class AppConfig {
     public SessionFactory sessionFactory(){
         SessionFactory sessionFactory=new Configuration().configure("sample/resources/hibernate.cgx.xml")
                 .addAnnotatedClass(Item_M.class)
+                .addAnnotatedClass(Ord.class)
+                .addAnnotatedClass(Order_item.class)
                 .buildSessionFactory();
         return sessionFactory;
     }

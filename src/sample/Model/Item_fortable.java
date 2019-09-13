@@ -11,7 +11,7 @@ public class Item_fortable {
     SimpleStringProperty item;
     SimpleIntegerProperty quality;
     SimpleFloatProperty price;
-
+    SimpleFloatProperty total;
     public Item_fortable() {
     }
 
@@ -20,6 +20,14 @@ public class Item_fortable {
         this.item = new SimpleStringProperty(item);
         this.quality =new SimpleIntegerProperty(quality);
         this.price = new SimpleFloatProperty(price);
+    }
+
+    public Item_fortable( int itemid, String item, int quality, float price,float total) {
+        this.itemid =new SimpleIntegerProperty(itemid);
+        this.item = new SimpleStringProperty(item);
+        this.quality =new SimpleIntegerProperty(quality);
+        this.price = new SimpleFloatProperty(price);
+        this.total=new SimpleFloatProperty(total);
     }
 
     public int getItemid() {
@@ -42,5 +50,15 @@ public class Item_fortable {
         return price.get();
     }
 
+    public float getTotal() {
+        return total.get();
+    }
 
+    public SimpleFloatProperty totalProperty() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total.set(total);
+    }
 }
